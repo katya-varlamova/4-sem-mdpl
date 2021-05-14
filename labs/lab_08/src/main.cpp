@@ -16,7 +16,7 @@ int strlen(char *str)
             "sub %%ecx, %%eax\n"
             "dec %%eax\n"
             "movl %%eax, %0\n"
-    : "=r"(count): "r"(str)
+    : "=r"(count): "r"(str) : "%%rcx", "%%rdi", "%%rax"
     );
     return count;
 }
